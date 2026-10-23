@@ -7,7 +7,7 @@ echo "Highest tag: ${highest_tag}"
 
 cd ..
 
-for dir in ./arbetsmiljo-20*/ ./arbetsmiljo-year; do
+for dir in ./arbetsmiljo-20*/; do
   if [ -d "$dir" ]; then
     echo "$dir"
     find "$dir" -type f -exec sh -c 'LC_CTYPE=C sed -i "" -E "s/arbetsmiljo\/autoindex@v[0-9]+/arbetsmiljo\/autoindex@${1}/g" "$2"' _ "$highest_tag" {} \;
